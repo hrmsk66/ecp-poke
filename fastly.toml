@@ -1,0 +1,21 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = [""]
+description = "A basic starter kit that demonstrates routing, simple synthetic responses and overriding caching rules."
+language = "javascript"
+manifest_version = 2
+name = "ecp-poke"
+service_id = "1dmOLBC54qF68Jr2P4UK8r"
+
+[local_server]
+
+  [local_server.backends]
+
+    [local_server.backends.origin_0]
+      override_host = "pokeapi.co"
+      url = "https://pokeapi.co"
+
+    [local_server.backends.origin_1]
+      override_host = "raw.githubusercontent.com"
+      url = "https://raw.githubusercontent.com"
